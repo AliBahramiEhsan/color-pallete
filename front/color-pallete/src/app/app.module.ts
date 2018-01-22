@@ -7,6 +7,9 @@ import { AppRoutingModule } from './/app-routing.module';
 import { UserInfoGetComponent } from './components/user-info-get/user-info-get.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { NeoPageComponent } from './components/neo-page/neo-page.component';
+import { FormsModule } from '@angular/forms';
+import { ColorMainComponent } from './components/color-main/color-main.component';
+import { ColorDetailsComponent } from './components/color-details/color-details.component';
 
 
 @NgModule({
@@ -14,11 +17,14 @@ import { NeoPageComponent } from './components/neo-page/neo-page.component';
     AppComponent,
     UserInfoGetComponent,
     LandingPageComponent,
-    NeoPageComponent
+    NeoPageComponent,
+    ColorMainComponent,
+    ColorDetailsComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

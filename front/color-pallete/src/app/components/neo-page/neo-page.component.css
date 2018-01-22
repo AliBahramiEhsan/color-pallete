@@ -1,0 +1,11 @@
+.numHolder{
+    background: orange;
+    margin-right: 10px;
+    border-radius: 3px;
+    padding: 5px 15px 5px 5px;
+    font-size: 18px;
+    font-weight: bold; 
+}
+.radioBoxContainer{
+    margin-left: 40px;
+}

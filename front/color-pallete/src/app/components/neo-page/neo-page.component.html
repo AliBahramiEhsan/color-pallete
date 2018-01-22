@@ -6,50 +6,52 @@
   <img width="200" alt="neo-test" src="assets\imgs\NeoTest.svg">
 </div>
 <br>
-<h3>Please fill below inputs.</h3>
-<p>These data is needed to getting output. We assure you your information will be kept secret and be safe with us.</p>
+<h3>Answer to below questions.</h3>
+<p>Estimated time to finish this porsesh name will be 10 minutes.</p>
 <br>
 <div class="row">
-  <div class="col-lg-3 col-md-6">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3">Name</span>
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
+    <ul *ngFor="let q of questions; let i = index">
+      <span class="numHolder">{{i+1}}.</span>{{q}}
+      <br>
+      <br>
+      <div class="radioBoxContainer">
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="1" [(ngModel)]="answers[i]"  (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '1'" > Strongly Agree
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="2" [(ngModel)]="answers[i]" (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '2'" > Agree
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="3" [(ngModel)]="answers[i]" (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '3'"> Neutral
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="4" [(ngModel)]="answers[i]" (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '4'"> Disagree
+          </label>
+        </div>
+        <div class="form-check form-check-inline">
+          <label class="form-check-label">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="5" [(ngModel)]="answers[i]" (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '5'"> Strongly Disagree
+          </label>
+        </div>
       </div>
-      <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
+      <hr>
+    </ul>
   </div>
-  <div class="col-lg-3 col-md-6">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3">Email</span>
-      </div>
-      <input type="email" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3">Age</span>
-      </div>
-      <input type="number" class="form-control" id="basic-url" aria-describedby="basic-addon3">
-    </div>
-  </div>
-  <div class="col-lg-3 col-md-6">
-    <div class="input-group mb-3">
-      <div class="input-group-prepend">
-        <span class="input-group-text" id="basic-addon3">Gender</span>
-      </div>
-      <select class="form-control" id="sel1">
-        <option>Male</option>
-        <option>Female</option>
-      </select>
-    </div>
-  </div>
+  <div class="col-lg-1"></div>
 </div>
 <br>
 <div class="row">
   <div class="col-sm-12 text-center">
-    <button class="btn btn-info" routerLink="/neoTest">Proceed to next page</button>
+    <button class="btn btn-info" routerLink="/mainPallete" (click)="checkAnswers()">Proceed to pallete page</button>
   </div>
 </div>
 <br>
