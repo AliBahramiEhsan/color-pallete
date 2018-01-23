@@ -10,6 +10,7 @@ import { NeoPageComponent } from './components/neo-page/neo-page.component';
 import { FormsModule } from '@angular/forms';
 import { ColorMainComponent } from './components/color-main/color-main.component';
 import { ColorDetailsComponent } from './components/color-details/color-details.component';
+import { ThankYouComponent } from './components/thank-you/thank-you.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ColorDetailsComponent } from './components/color-details/color-details.
     LandingPageComponent,
     NeoPageComponent,
     ColorMainComponent,
-    ColorDetailsComponent
+    ColorDetailsComponent,
+    ThankYouComponent
   ],
   imports: [
     BrowserModule,

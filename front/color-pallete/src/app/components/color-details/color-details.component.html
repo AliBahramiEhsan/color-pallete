@@ -4,13 +4,55 @@
     Color Pallete Test
   </h1>
   <br>
-  <h2>Mother</h2>
-  Goozine ha goes here
+  <h2>{{SelectedMeaning}}</h2>
 </div>
+<br>
+<div style="text-align:center" [hidden]="selectedColor!=''">You have not choosed a color yet.</div>
+<div style="text-align:center" [hidden]="selectedColor==''">You have choosed {{selectedColor | uppercase}}.</div>
+<br>
+<br>
+<br>
+<div class="row">
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+</div>
+<br>
+<div class="row">
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+</div>
+<br>
+<div class="row">
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+  <div class="col-3 text-center"><button class="btn " (click)="selectedColor='red'"><span class="coloric">HH</span> red</button></div>
+</div>
+<br>
+<br>
 <div class="row">
   <div class="col-sm-12 text-center">
-    <button class="btn btn-info" routerLink="/palleteDetails">Proceed</button>
+    <button class="btn btn-info" (click)="goNext()">{{buttonLabel}}</button>
   </div>
 </div>
 <br>
 <br>
+<div class="modal fade" id="noColorSelected" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">No Color Selected</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        You must choose a color for concept "{{SelectedMeaning}}".
+      </div>
+    </div>
+  </div>
+</div>

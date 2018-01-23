@@ -6,13 +6,15 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { NeoPageComponent } from './components/neo-page/neo-page.component';
 import { ColorMainComponent } from './components/color-main/color-main.component';
 import { ColorDetailsComponent } from './components/color-details/color-details.component';
+import { ThankYouComponent } from './components/thank-you/thank-you.component';
 
 const routes: Routes = [
   { path: '', component: LandingPageComponent, pathMatch: 'full' },
   { path: 'userInfo', component: UserInfoGetComponent },
   { path: 'neoTest', component: NeoPageComponent },
   { path: 'mainPallete', component: ColorMainComponent },
-  { path: 'palleteDetails', component: ColorDetailsComponent}
+  { path: 'palleteDetails', component: ColorDetailsComponent },
+  { path: 'thankYou', component: ThankYouComponent}
 ];
 
 @NgModule({
