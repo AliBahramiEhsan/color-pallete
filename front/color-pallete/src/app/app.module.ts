@@ -11,7 +11,6 @@ import { FormsModule } from '@angular/forms';
 import { ColorMainComponent } from './components/color-main/color-main.component';
 import { ColorDetailsComponent } from './components/color-details/color-details.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +23,7 @@ import { ColorDetailsComponent } from './components/color-details/color-details.
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

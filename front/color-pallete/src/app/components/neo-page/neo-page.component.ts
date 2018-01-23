@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import * as $ from "jquery";
+import { ActivatedRoute, Router } from '@angular/router';
+// import * as $ from "jquery";
+declare var $: any;
 @Component({
   selector: 'app-neo-page',
   templateUrl: './neo-page.component.html',
@@ -9,11 +11,14 @@ export class NeoPageComponent implements OnInit {
   questions: Array<String> = [];
   answers = [];
   indexQuestionsWithNoAnswer: Array<Number> = [];
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     for (let index = 0; index < 60; index++) {
       this.questions.push( "Q" + index);
       this.answers.push(-1);
     }
+    console.log(this.questions);
     console.log(this.questions);
     console.log(this.answers);
    }
@@ -28,8 +33,22 @@ export class NeoPageComponent implements OnInit {
         this.indexQuestionsWithNoAnswer.push(index);
       }
     }
+    if(this.indexQuestionsWithNoAnswer.length === 0){
+      $('#Congrags').modal('show');
+      setTimeout(() => {
+        $('#Congrags').modal('hide');
+      }, 2000);
+      setTimeout(() => {
+        this.router.navigate(['/mainPallete']);
+      }, 2300);
+    }
+    else{
+      $('#QuestionsWithNoAnswer').modal('show');
+
+    }
     console.log(this.indexQuestionsWithNoAnswer);
   }
+
   check(value, index){
     $(document).ready(function(){
       $('#radio-1-' + index).prop('checked', false);
@@ -44,5 +63,11 @@ export class NeoPageComponent implements OnInit {
   }
   whatHappens($event){
     console.log(this.answers);
+  }
+  forceToColor(){
+    $('#QuestionsWithNoAnswer').modal('hide');
+    setTimeout(() => {
+      this.router.navigate(['/mainPallete']);
+    }, 300);
   }
 }

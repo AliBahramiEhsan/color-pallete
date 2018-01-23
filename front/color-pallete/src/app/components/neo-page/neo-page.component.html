@@ -51,8 +51,48 @@
 <br>
 <div class="row">
   <div class="col-sm-12 text-center">
-    <button class="btn btn-info" routerLink="/mainPallete" (click)="checkAnswers()">Proceed to pallete page</button>
+    <button class="btn btn-info" (click)="checkAnswers()">Proceed to pallete page</button>
   </div>
 </div>
 <br>
 <br>
+<div class="modal fade" id="Congrags" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cheer up</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Thanks. Now we proceed to colors test which is shorter than this test.
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal fade" id="QuestionsWithNoAnswer" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Some Questions have no answer</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        There are questions you give them no answer. The list of their numbers are given below. You can move to colors test, though.
+        <br>
+        <br>
+        <h5>Questions with no answer:</h5>
+        <span *ngFor="let na of indexQuestionsWithNoAnswer; let i = index">
+          {{na+1}} <span [hidden]="i==indexQuestionsWithNoAnswer.length-1" >,</span>
+        </span>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">back</button>
+        <button type="button" class="btn btn-primary" (click)="forceToColor()">Proceed to color test</button>
+      </div>
+    </div>
+  </div>
+</div>
