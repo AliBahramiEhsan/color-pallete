@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as $ from "jquery";
 @Component({
   selector: 'app-neo-page',
   templateUrl: './neo-page.component.html',
@@ -29,6 +29,18 @@ export class NeoPageComponent implements OnInit {
       }
     }
     console.log(this.indexQuestionsWithNoAnswer);
+  }
+  check(value, index){
+    $(document).ready(function(){
+      $('#radio-1-' + index).prop('checked', false);
+      $('#radio-2-' + index).prop('checked', false);
+      $('#radio-3-' + index).prop('checked', false);
+      $('#radio-4-' + index).prop('checked', false);
+      $('#radio-5-' + index).prop('checked', false);
+      $('#radio-' + value + '-' + index).prop('checked', true);
+    });
+    this.answers[index] = value;
+    console.log(this.answers);
   }
   whatHappens($event){
     console.log(this.answers);

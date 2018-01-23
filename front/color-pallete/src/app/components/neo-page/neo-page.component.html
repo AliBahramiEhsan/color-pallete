@@ -19,27 +19,27 @@
       <div class="radioBoxContainer">
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="1" [(ngModel)]="answers[i]"  (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '1'" > Strongly Agree
+            <input class="form-check-input" [attr.id]="'radio-1-' + i" type="radio" value="1" (click)="check(1, i)"> Strongly Agree
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="2" [(ngModel)]="answers[i]" (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '2'" > Agree
+            <input class="form-check-input" [attr.id]="'radio-2-' + i" type="radio" value="2" (click)="check(2, i)" > Agree
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="3" [(ngModel)]="answers[i]" (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '3'"> Neutral
+            <input class="form-check-input" [attr.id]="'radio-3-' + i" type="radio" value="3" (click)="check(3, i)" > Neutral
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="4" [(ngModel)]="answers[i]" (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '4'"> Disagree
+            <input class="form-check-input" [attr.id]="'radio-4-' + i" type="radio" value="4" (click)="check(4, i)" > Disagree
           </label>
         </div>
         <div class="form-check form-check-inline">
           <label class="form-check-label">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" value="5" [(ngModel)]="answers[i]" (ngModelChange)="whatHappens($event)" [checked]= "answers[i] === '5'"> Strongly Disagree
+            <input class="form-check-input" [attr.id]="'radio-5-' + i" type="radio" value="5" (click)="check(5, i)" > Strongly Disagree
           </label>
         </div>
       </div>
