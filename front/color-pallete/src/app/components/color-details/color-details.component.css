@@ -1,5 +1,10 @@
-
 .coloric{
     color: red;
     background: red;
+    margin-right: 15%;
+}
+.btnWhiteSmoke{
+    background-color: whitesmoke;
+    width: 100%;
+    text-align: left;
 }
