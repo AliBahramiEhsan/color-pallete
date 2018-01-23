@@ -28,18 +28,18 @@ export class ColorDetailsComponent implements OnInit {
       }, 2000);
     }
     else{
-      this.index++;
-      if (this.index === this.Meanings.length-1){
-        this.buttonLabel = "Done!";
-      }
-      this.selectedColorList.push(this.selectedColor);
-      this.selectedColor = "";
-      this.SelectedMeaning = this.Meanings[this.index];
       if (this.buttonLabel == "Done!"){
         // go to next page
         this.router.navigate(['/thankYou']);
         console.log(this.selectedColorList);
       }
+      this.index++;
+      if (this.index == this.Meanings.length-1){
+        this.buttonLabel = "Done!";
+      }
+      this.selectedColorList.push(this.selectedColor);
+      this.selectedColor = "";
+      this.SelectedMeaning = this.Meanings[this.index];
     }
   }
 }

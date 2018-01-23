@@ -1,10 +1,16 @@
 .coloric{
     color: red;
     background: red;
-    margin-right: 15%;
+    margin-right: 10%;
 }
 .btnWhiteSmoke{
+    height: 50px;
     background-color: whitesmoke;
     width: 100%;
     text-align: left;
+}
+@media only screen and (max-width: 500px) {
+    .btnWhiteSmoke{
+        font-size: 3.5vw;
+    }
 }
