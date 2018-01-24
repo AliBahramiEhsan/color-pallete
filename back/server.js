@@ -84,49 +84,6 @@ router.post('/newPallete', function (req, res) {
 	});
 });
 
-
-
-//questions:
-router.get('/allQuestions', function(req, res){
-	model.question.find({}, function(err, q){
-		if(err)
-			res.send(err);
-		res.json(q);
-	});
-});
-
-router.post('/newQuestion', function(req, res){
-	var q = model.question(req.body);
-	q.save(function(err){
-		if(err)
-			res.send(err);
-		res.json({msg: 'question successfully added!'});
-	});
-});
-router.post('/removeQuestion', function(req, res){
-	model.question.remove({_id: req.body._id}, function(err){
-		if(err)
-			res.send(err);
-		res.json({msg: 'question removed successfully'});
-	});
-});
-
-//answers:
-router.get('/allAnswers', function(req, res){
-	model.answer.find({}, function(err, a){
-		if(err)
-			res.send(err);
-		res.json(a);
-	});
-});
-router.post('/submitAnswers', function(req, res){
-	var a = model.answer(req.body);
-	a.save(function(err){
-		if(err)
-			res.send(err);
-		res.json({msg: 'a survey successfully submitted!'});
-	});
-});
 //csv output:
 var maxAnsLength = -1;
 router.get('/csv', function(req, res, next) {
