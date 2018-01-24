@@ -56,22 +56,34 @@ function dataToCSV(dataList,headersLength){
 router.get('/', function(req, res){
 	res.json({msg: 'YAY!'});
 });
+// users:
+router.post('/newUser', function(req, res){
+	var u = model.user(req.body);
+	u.save(function(err){
+		if(err)
+			res.send(err);
+		res.json({id : u._id});
+	});
+});
+// Neo Answers:
+router.post('/newAnswer', function (req, res) {
+	var a = model.answer(req.body);
+	a.save(function (err) {
+		if (err)
+			res.send(err);
+		res.json({ msg: 'answer successfully added!' });
+	});
+});
+// Pallete:
+router.post('/newPallete', function (req, res) {
+	var a = model.pallete(req.body);
+	a.save(function (err) {
+		if (err)
+			res.send(err);
+		res.json({ msg: 'pallete successfully added!' });
+	});
+});
 
-router.post('/newGroup', function(req, res){
-	var g = model.group(req.body);
-	g.save(function(err){
-		if(err)
-			res.send(err);
-		res.json({msg: 'group successfully added!'});
-	});
-});
-router.post('/removeGroup', function(req, res){
-	model.group.remove({_id: req.body._id}, function(err){
-		if(err)
-			res.send(err);
-		res.json({msg: 'group removed successfully'});
-	});
-});
 
 
 //questions:
